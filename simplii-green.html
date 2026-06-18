@@ -1643,7 +1643,7 @@ if(window.gsap&&window.ScrollTrigger){
 
     const cx=W/2, cy=H*0.46;
 
-    const sunFade=1-smooth(p,0.22,0.40);   // fade out earlier so the sun clears before the cube grows in
+    const sunFade=1-smooth(p,0.30,0.52);
     if(sunFade>0.01){
       // sun rises from bottom-right and arcs up & over, lighting the text from above (quadratic Bézier)
       const t=smooth(p,0,0.40);
