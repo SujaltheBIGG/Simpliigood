@@ -240,7 +240,9 @@
 @media (max-width: 480px) {
   .values-cards { grid-template-columns: 1fr; }
 }
-
+/* solid nav-light header (the hero is light, so it can't be transparent); links stay white on scroll */
+.nav.nav-light { background: var(--green); }
+.nav.nav-light.scrolled .nav-links a:not(.btn) { color: var(--cream); }
 </style>
 </head>
 <body>
@@ -249,7 +251,7 @@
 <div class="cursor" id="cursor" aria-hidden="true"></div>
 <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
-<header class="nav" id="nav">
+<header class="nav nav-light" id="nav">
   <div class="wrap nav-inner">
     <a href="index.html" class="brand"><img src="images/wordmark.png" alt="SimpliiGood" onerror="this.style.display='none'"/></a>
     <nav class="nav-links" id="navLinks">
@@ -259,7 +261,7 @@
       <a href="texture.html">Simplii Texture</a>
       <a href="simplii-green.html#stores">Find a Store</a>
       <a href="about.html">About</a>
-      <a class="btn btn-green" href="https://shop.simpliigood.com" target="_blank" rel="noopener">Shop Now <span class="arr">&#8594;</span></a>
+      <a class="btn btn-green" href="https://shop.simpliigood.com" target="_blank" rel="noopener" data-cursor="Shop">Shop Now <span class="arr">&#8594;</span></a>
     </nav>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
