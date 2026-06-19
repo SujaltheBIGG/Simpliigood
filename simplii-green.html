@@ -83,6 +83,8 @@ h1,h2,h3{font-family:var(--display);font-weight:900;line-height:.92;letter-spaci
 .nav.scrolled{background:var(--green);padding:12px 0;box-shadow:0 8px 30px -16px rgba(0,0,0,.5)}
 .nav.scrolled .brand,.nav.scrolled .nav-links a:not(.btn){color:var(--yellow)}
 .nav.scrolled .nav-links a:not(.btn)::after{background:var(--yellow)}
+/* nav-light links stay white (cream) when scrolled, instead of turning yellow */
+.nav.nav-light.scrolled .nav-links a:not(.btn){color:var(--cream)}
 .nav.scrolled .brand img{filter:brightness(0) invert(1)}
 .nav.scrolled .btn-green{background:var(--yellow);color:var(--green)}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
@@ -91,7 +93,7 @@ h1,h2,h3{font-family:var(--display);font-weight:900;line-height:.92;letter-spaci
 
 /* ============ HERO ============ */
 .hero{background:var(--yellow);min-height:100vh;display:flex;align-items:center;padding:120px 0 60px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1fr 1.45fr;gap:40px;align-items:center}
 .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
 .hero-badges span{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;background:var(--green);color:var(--yellow);padding:.5em 1em;border-radius:999px}
 .hero h1{font-size:clamp(3.2rem,8.5vw,7rem);color:var(--green)}
@@ -1137,36 +1139,6 @@ p{text-wrap:pretty}
   </div>
 </div>
 
-<!-- ============ B2B / FOOD SERVICE ============ -->
-<section class="sec b2b" id="wholesale">
-  <div class="wrap b2b-grid">
-    <div class="reveal">
-      <span class="eyebrow">For retailers &amp; food service</span>
-      <h2>Stock SimpliiGood <span class="y">in your store.</span></h2>
-      <p class="sub">Cafés, smoothie bars, juice bars, brokers and retail chains, bring fresh-frozen spirulina to your menu and shelves. Tell us about your business and we'll send a price list.</p>
-      <form class="form" id="b2bForm" novalidate>
-        <div class="field"><label>Business name</label><input name="biz" placeholder="Your business" required/></div>
-        <div class="field"><label>Your name</label><input name="name" placeholder="Full name" required/></div>
-        <div class="field"><label>Email address</label><input name="email" type="email" placeholder="you@business.com" required/></div>
-        <div class="field"><label>Business type</label>
-          <select name="type" required>
-            <option value="" disabled selected>Select type</option>
-            <option>Café / Smoothie bar</option><option>Juice bar</option><option>Retail chain</option>
-            <option>Broker / Wholesaler</option><option>Distributor</option><option>Other</option>
-          </select>
-        </div>
-        <div class="field full"><label>Estimated monthly volume &amp; notes</label><textarea name="notes" rows="3" placeholder="Tell us about your business"></textarea></div>
-        <label class="form-note"><input type="checkbox" style="width:auto;display:inline" required/> &nbsp;I agree to be contacted about wholesale pricing.</label>
-        <button type="submit" class="btn btn-yellow">Request price list <span class="arr">&#8594;</span></button>
-        <p class="formmsg" id="formMsg">Thanks, we'll be in touch within one business day.</p>
-      </form>
-    </div>
-    <div class="b2b-media" data-reveal="fly" data-fly="right">
-      <img src="images/b2b-bar.webp" alt="A smoothie bar barista blending with SimpliiGood Spirulina" />
-    </div>
-  </div>
-</section>
-
 <!-- ============ STORE LOCATOR ============ -->
 <section class="sec stores" id="stores">
   <div class="wrap">
@@ -1186,7 +1158,7 @@ p{text-wrap:pretty}
     </div>
     <div class="stores-cta reveal" style="margin-top:30px">
       <a class="btn btn-green" href="https://shop.simpliigood.com" target="_blank" rel="noopener">Order online instead <span class="arr">&#8594;</span></a>
-      <a class="btn btn-outline-green" href="#wholesale">Become a stockist</a>
+      <a class="btn btn-outline-green" href="food-service.html">Become a stockist</a>
     </div>
   </div>
 </section>
