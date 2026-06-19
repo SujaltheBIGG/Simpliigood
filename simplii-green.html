@@ -72,6 +72,14 @@ h1,h2,h3{font-family:var(--display);font-weight:900;line-height:.92;letter-spaci
 .nav-links a:not(.btn){font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:.95rem;color:var(--green);position:relative;padding:4px 0}
 .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--green);transition:width .25s ease}
 .nav-links a:not(.btn):hover::after{width:100%}
+/* nav-light: solid (never transparent) dark nav with light content; scroll still recolors links + adds shadow */
+.nav.nav-light{background:var(--green)}
+.nav.nav-light .brand{color:var(--yellow)}
+.nav.nav-light .brand img{filter:brightness(0) invert(1)}
+.nav.nav-light .nav-links a:not(.btn){color:var(--cream)}
+.nav.nav-light .nav-links a:not(.btn)::after{background:var(--yellow)}
+.nav.nav-light .btn-green{background:var(--yellow);color:var(--green)}
+.nav.nav-light .burger span{background:var(--yellow)}
 .nav.scrolled{background:var(--green);padding:12px 0;box-shadow:0 8px 30px -16px rgba(0,0,0,.5)}
 .nav.scrolled .brand,.nav.scrolled .nav-links a:not(.btn){color:var(--yellow)}
 .nav.scrolled .nav-links a:not(.btn)::after{background:var(--yellow)}
@@ -83,7 +91,7 @@ h1,h2,h3{font-family:var(--display);font-weight:900;line-height:.92;letter-spaci
 
 /* ============ HERO ============ */
 .hero{background:var(--yellow);min-height:100vh;display:flex;align-items:center;padding:120px 0 60px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:center}
 .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
 .hero-badges span{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;background:var(--green);color:var(--yellow);padding:.5em 1em;border-radius:999px}
 .hero h1{font-size:clamp(3.2rem,8.5vw,7rem);color:var(--green)}
@@ -782,17 +790,17 @@ p{text-wrap:pretty}
 <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
 <!-- ============ NAV ============ -->
-<header class="nav" id="nav">
+<header class="nav nav-light" id="nav">
   <div class="wrap nav-inner">
     <a href="index.html" class="brand"><img src="images/wordmark.png" alt="SimpliiGood" onerror="this.style.display='none'"/></a>
     <nav class="nav-links" id="navLinks">
-      <a href="#benefits">Why Spirulina</a>
-      <a href="#use">How to Use</a>
+      <a href="simplii-green.html#benefits">Why Spirulina</a>
+      <a href="simplii-green.html#use">How to Use</a>
       <a href="food-service.html">Food Service</a>
       <a href="texture.html">Simplii Texture</a>
-      <a href="#stores">Find a Store</a>
+      <a href="simplii-green.html#stores">Find a Store</a>
       <a href="about.html">About</a>
-      <a class="btn btn-green" href="https://shop.simpliigood.com" target="_blank" rel="noopener">Shop Now <span class="arr">&#8594;</span></a>
+      <a class="btn btn-green" href="https://shop.simpliigood.com" target="_blank" rel="noopener" data-cursor="Shop">Shop Now <span class="arr">&#8594;</span></a>
     </nav>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -942,49 +950,6 @@ p{text-wrap:pretty}
       <div class="hpanel"><button class="uc" data-recipe="choc" data-cursor="View" aria-label="View Chocolate Peanut Butter Spirulina Smoothie recipe"><div class="ph"><img src="images/recipe-choc.webp" alt="Chocolate Peanut Butter Spirulina Smoothie"/></div><div class="body"><span class="n">3 min &middot; Easy</span><h3>Choc Peanut Butter Smoothie</h3><p>A rich, dessert-like smoothie that delivers serious nutrition.</p><span class="uc-view">View recipe <span class="arr">&#8594;</span></span></div></button></div>
       <div class="hpanel"><button class="uc" data-recipe="dip" data-cursor="View" aria-label="View Spirulina Avocado Dip recipe"><div class="ph"><img src="images/recipe-dip.webp" alt="Spirulina Avocado Dip"/></div><div class="body"><span class="n">5 min &middot; Easy</span><h3>Spirulina Avocado Dip</h3><p>A savory way to enjoy spirulina, perfect for sharing.</p><span class="uc-view">View recipe <span class="arr">&#8594;</span></span></div></button></div>
       <div class="hpanel"><div class="uc uc-cta" style="justify-content:center;align-items:flex-start;background:var(--yellow);border-color:var(--yellow)"><div class="body"><span class="n" style="color:var(--green)">Recipe library</span><h3 style="color:var(--green)">More where that came from.</h3><p style="color:rgba(21,64,72,.8)">Smoothies, bowls, drinks &amp; savory dips, explore the full collection.</p><a class="btn btn-green" style="margin-top:18px" href="https://n6hxi54aj4soy.kimi.page/#/recipes" target="_blank" rel="noopener">Browse all recipes <span class="arr">&#8594;</span></a></div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ IN ACTION (video band) ============ -->
-<section class="sec inaction">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">See it in action</span>
-      <h2>Real people. Real cubes.</h2>
-      <p>One cube, one glass, three seconds. This is what a SimpliiGood morning actually looks like.</p>
-    </div>
-    <div class="video-grid">
-      <div class="vcard" data-reveal="rise">
-        <video autoplay muted loop playsinline poster="images/in-action-poster.jpg"><source src="videos/in-action.mp4" type="video/mp4"/></video>
-        <span class="vlabel">Morning ritual</span>
-      </div>
-      <div class="vcard" data-reveal="rise">
-        <img src="images/inaction-tray.webp" alt="SimpliiGood Spirulina pack beside a glass of fresh green juice, flat lay" />
-        <span class="vlabel">Real cubes, real green</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SHOP ============ -->
-<section class="sec shop" id="shop">
-  <div class="wrap shop-grid">
-    <div class="shop-media has-video" data-reveal="fly" data-fly="right">
-      <img class="shop-still" src="images/shop-pack.webp" alt="SimpliiGood Spirulina pack on a marble counter" />
-      <span class="vtag">10 cubes &middot; ships frozen</span>
-    </div>
-    <div class="shop-copy reveal">
-      <span class="eyebrow" style="color:var(--starburst)">D2C &middot; Home delivery</span>
-      <h2>Sunshine, delivered frozen.</h2>
-      <div class="price">$69.90<small> &nbsp;minimum order &middot; ships frozen</small></div>
-      <ul>
-        <li>10 fresh-frozen cubes per tray &middot; 0.5 oz (14g) each</li>
-        <li>10-Day Starter Pack, one cube a day</li>
-        <li>Bundles &amp; bulk quantities available</li>
-        <li>Kept frozen, alive and potent to your door</li>
-      </ul>
-      <a class="btn btn-green" href="https://shop.simpliigood.com" target="_blank" rel="noopener">Shop now <span class="arr">&#8594;</span></a>
     </div>
   </div>
 </section>
@@ -1269,7 +1234,7 @@ p{text-wrap:pretty}
         <h4>Explore</h4>
         <a href="#benefits"><span class="fa">&#8594;&nbsp;</span>Why Spirulina</a>
         <a href="#use"><span class="fa">&#8594;&nbsp;</span>How to Use</a>
-        <a href="#shop"><span class="fa">&#8594;&nbsp;</span>Shop</a>
+        <a href="https://shop.simpliigood.com" target="_blank" rel="noopener"><span class="fa">&#8594;&nbsp;</span>Shop</a>
         <a href="#stores"><span class="fa">&#8594;&nbsp;</span>Find a Store</a>
       </div>
       <div class="col reveal">
