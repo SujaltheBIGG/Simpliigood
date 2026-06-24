@@ -764,6 +764,9 @@ p{text-wrap:pretty}
 .rs-rec b{color:var(--starburst);font-size:.9rem}
 /* the review-section eyebrow drops the leading accent rule */
 .testi .sec-head .eyebrow::before{display:none}
+/* lock the testimonials heading + trust row to centered (no max-width overflow) */
+.testi .sec-head{max-width:none;margin-left:auto;margin-right:auto;text-align:center}
+.testi .review-foot{justify-content:center;text-align:center;width:100%}
 /* distribution bars */
 .rs-bars{display:flex;flex-direction:column;gap:9px}
 .rs-bar{display:grid;grid-template-columns:34px 1fr 38px;align-items:center;gap:11px}
