@@ -249,6 +249,31 @@
 }
 /* drop the marquee edge fade-out (reads as a white glow over the dark band) */
 .marquee { -webkit-mask-image: none; mask-image: none; }
+
+/* ---- THE TECHNOLOGY section (proprietary-process explainer) ---- */
+.techsec { background: var(--white); }
+.techsec .tech-head { max-width: 700px; }
+.techsec .tech-head .eyebrow { color: var(--green); display: block; margin-bottom: 20px; letter-spacing: .2em; }
+.techsec .tech-head h2 { font-family: var(--display); font-weight: 900; text-transform: none; font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.05; color: var(--green); letter-spacing: -.01em; }
+.techsec .tech-head h2 .g { color: var(--starburst); }
+.techsec .tech-head p { font-family: var(--cond); font-weight: 500; text-transform: none; font-size: 1.12rem; line-height: 1.55; color: var(--green); margin-top: 24px; max-width: 62ch; }
+.techsec .tech-proc { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 76px; }
+.techsec .tproc .plabel { font-family: var(--cond); font-weight: 700; text-transform: uppercase; letter-spacing: .18em; font-size: .78rem; color: var(--starburst); display: block; }
+.techsec .tproc h3 { font-family: var(--display); font-weight: 900; text-transform: none; font-size: 1.5rem; line-height: 1.15; color: var(--green); margin-top: 18px; letter-spacing: -.01em; }
+.techsec .tproc p { font-family: var(--cond); font-weight: 500; text-transform: none; font-size: 1.04rem; line-height: 1.55; color: var(--green); margin-top: 18px; }
+.techsec .tech-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px; margin-top: 76px; }
+.techsec .tstat { border-top: 2px solid var(--green); padding-top: 22px; }
+.techsec .tstat b { font-family: var(--display); font-weight: 900; font-size: clamp(2.4rem, 4vw, 3.2rem); color: var(--green); display: block; line-height: 1; }
+.techsec .tstat span { font-family: var(--cond); font-weight: 500; text-transform: none; font-size: 1rem; line-height: 1.4; color: var(--green); display: block; margin-top: 12px; }
+.techsec .tech-no { display: flex; flex-wrap: wrap; gap: 14px 32px; margin-top: 48px; padding: 0; }
+.techsec .tech-no li { list-style: none; font-family: var(--cond); font-weight: 600; text-transform: none; font-size: .98rem; color: var(--green); display: flex; align-items: center; gap: 9px; }
+.techsec .tech-no li::before { content: "\00D7"; color: var(--strawberry); font-weight: 800; font-size: 1.1rem; line-height: 1; }
+.techsec .tech-cta { display: flex; align-items: center; gap: 30px; margin-top: 52px; flex-wrap: wrap; }
+.techsec .tech-cta .tbrief { font-family: var(--cond); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; font-size: .95rem; color: var(--green); text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 760px) {
+  .techsec .tech-proc { grid-template-columns: 1fr; gap: 46px; margin-top: 56px; }
+  .techsec .tech-stats { grid-template-columns: 1fr; gap: 30px; margin-top: 56px; }
+}
 </style>
 </head>
 <body>
@@ -261,13 +286,12 @@
   <div class="wrap nav-inner">
     <a href="index.html" class="brand"><img src="images/wordmark.png" alt="SimpliiGood" onerror="this.style.display='none'"/></a>
     <nav class="nav-links" id="navLinks">
-      <a href="simplii-green.html#benefits">Why Spirulina</a>
-      <a href="simplii-green.html#use">How to Use</a>
+      <a href="simplii-green.html#inside">What's Inside</a>
+      <a href="simplii-green.html#fresh">Why Fresh</a>
       <a href="food-service.html">Food Service</a>
       <a href="texture.html">Simplii Texture</a>
-      <a href="simplii-green.html#stores">Find a Store</a>
       <a href="about.html">About</a>
-      <a class="btn btn-green" href="https://shop.simpliigood.com" target="_blank" rel="noopener">Shop Now <span class="arr">&#8594;</span></a>
+      <a class="btn btn-green" href="simplii-green.html#stores">Find a Store <span class="arr">&#8594;</span></a>
     </nav>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -283,7 +307,7 @@
       <p class="lead">We take the same algae behind our cubes and engineer it into clean, plant-based smoked salmon and seafood textures. Real bite, complete nutrition, zero fish.</p>
       <div class="phero-cta">
         <a class="btn btn-yellow" href="#applications">See the applications <span class="arr">&#8594;</span></a>
-        <a class="btn btn-outline-light" href="#contact">Investor &amp; sample requests</a>
+        <a class="btn btn-outline-light" href="food-service.html#pricelist">Investor &amp; sample requests</a>
       </div>
     </div>
     <div class="phero-media reveal"><img src="images/texture-slices.webp" alt="Spirulina-based smoked salmon slices"/></div>
@@ -295,16 +319,47 @@
   <span>Spirulina seafood</span><span>Zero fish</span><span>Real texture</span><span>Complete protein</span>
 </div></div>
 
-<!-- WHAT IT IS -->
-<section class="sec intro-split">
-  <div class="wrap split wide-l">
-    <div class="reveal">
-      <span class="eyebrow" style="color:var(--starburst)">The breakthrough</span>
-      <h2>We turned an algae into <span style="color:var(--starburst)">a canvas.</span></h2>
-      <p>Spirulina is a complete protein with a natural structure we can shape. By working with its chlorophyll and fibres, we craft a clean, whole-food texture that slices, folds and melts like premium smoked salmon, without a single fish.</p>
-      <p>No farmed salmon. No microplastics. No heavy metals. Just real, traceable nutrition that chefs can plate and consumers can trust.</p>
+<!-- THE TECHNOLOGY -->
+<section class="sec techsec" id="technology">
+  <div class="wrap">
+    <div class="tech-head reveal">
+      <span class="eyebrow">The technology</span>
+      <h2>We unlocked spirulina's natural structure &mdash; and <span class="g">rebuilt it</span> into texture.</h2>
+      <p>Spirulina isn't just a nutrient source. It has a fibrous, protein-rich architecture that can be shaped, sliced, and cooked &mdash; without extrusion, without binders, without anything artificial. We developed two proprietary processes to unlock that potential.</p>
     </div>
-    <div class="split-media reveal"><img src="images/texture-bagel.webp" alt="Spirulina smoked salmon on a bagel" loading="lazy"/></div>
+
+    <div class="tech-proc">
+      <div class="tproc reveal">
+        <span class="plabel">Process 01 &mdash; Chlorophyll Separation</span>
+        <h3>We separate the green.<br>Everything valuable stays.</h3>
+        <p>Our proprietary decolorization process isolates chlorophyll from the spirulina mass &mdash; redirecting it as a natural food colorant or high-value ingredient stream. What remains is a protein-dense, carotenoid-rich base with a neutral profile: clean flavor, clean color, ready to take on whatever the formulation needs.</p>
+      </div>
+      <div class="tproc reveal">
+        <span class="plabel">Process 02 &mdash; Texture Formation</span>
+        <h3>Spirulina's own fibers,<br>shaped into structure.</h3>
+        <p>No extrusion. No 3D printing. No complex machinery. We work with spirulina's natural fibrous structure to create a high-moisture, whole-food texture &mdash; one that slices, folds, and behaves like premium animal protein on the plate. Clean-label by design, not by compromise.</p>
+      </div>
+    </div>
+
+    <div class="tech-stats reveal">
+      <div class="tstat"><b>70%</b><span>Protein content in the final texture &mdash; higher than most animal analogs</span></div>
+      <div class="tstat"><b>2</b><span>IP-protected proprietary processes &mdash; both developed in-house</span></div>
+      <div class="tstat"><b>1</b><span>Core ingredient. Spirulina &mdash; nothing extracted, nothing synthetic added</span></div>
+    </div>
+
+    <ul class="tech-no reveal">
+      <li>No farmed salmon</li>
+      <li>No microplastics</li>
+      <li>No heavy metals</li>
+      <li>No extrusion</li>
+      <li>No artificial binders</li>
+      <li>No synthetic colorants</li>
+    </ul>
+
+    <div class="tech-cta reveal">
+      <a class="btn btn-green" href="food-service.html#pricelist">Request a Sample <span class="arr">&#8594;</span></a>
+      <a class="tbrief" href="mailto:Contact@simpliigood.com?subject=Simplii%20Texture%20Tech%20Brief">Download Tech Brief</a>
+    </div>
   </div>
 </section>
 
@@ -318,33 +373,6 @@
       <figure class="reveal"><img src="images/texture-bagel.webp" alt="Bagel application" loading="lazy"/></figure>
       <figure class="reveal"><img src="images/texture-canapes.webp" alt="Canapes" loading="lazy"/></figure>
       <figure class="reveal wide"><img src="images/texture-bagel2.webp" alt="Open bagel" loading="lazy"/></figure>
-    </div>
-  </div>
-</section>
-
-<!-- WHY IT MATTERS, dark accent cards -->
-<section class="sec wins-outer">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">Why it matters</span><h2>One texture, three wins.</h2></div>
-    <div class="cards">
-      <div class="card reveal">
-        <div class="ic">01</div>
-        <span class="card-tag green">Kitchen-ready</span>
-        <h3>For chefs</h3>
-        <p>A premium, shelf-stable salmon alternative that plates beautifully and holds its bite from prep to plate. Slices, folds, melts.</p>
-      </div>
-      <div class="card reveal">
-        <div class="ic">02</div>
-        <span class="card-tag yellow">Scalable</span>
-        <h3>For manufacturers</h3>
-        <p>A single-ingredient base for ready meals, spreads and bagels, with clean-label nutrition built in and no cold-chain compromise.</p>
-      </div>
-      <div class="card reveal">
-        <div class="ic">03</div>
-        <span class="card-tag pink">Net positive</span>
-        <h3>For the planet</h3>
-        <p>Microalgae uses a fraction of the land and water of fish farming, with none of the bycatch, heavy metals or microplastics.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -391,49 +419,6 @@
   </div>
 </section>
 
-<!-- STATS, split with image -->
-<section class="sec yellow">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">By the numbers</span><h2>Real food, real difference.</h2></div>
-    <div class="stats-split reveal">
-      <div class="stats-split-img">
-        <img src="images/inaction-tray.webp" alt="SimpliiGood Spirulina pack beside a glass of fresh green juice, flat lay" loading="lazy"/>
-      </div>
-      <div class="stats-split-nums">
-        <div class="statrow">
-          <div class="st"><b><span class="count" data-to="0">0</span></b><span>Fish, ever</span></div>
-          <div class="st"><b><span class="count" data-to="100">0</span>%</b><span>Plant-based, complete protein</span></div>
-          <div class="st"><b><span class="count" data-to="0">0</span></b><span>Mercury, microplastics or bycatch</span></div>
-          <div class="st"><b><span class="count" data-to="1">0</span></b><span>Traceable algae source</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- INVESTORS / CONTACT -->
-<section class="sec green" id="contact">
-  <div class="wrap split">
-    <div class="reveal">
-      <span class="eyebrow" style="color:var(--yellow)">For partners &amp; investors</span>
-      <h2 style="color:#fff">Taste the <span class="y">future of food.</span></h2>
-      <p style="color:rgba(255,255,255,.82)">Chefs, food companies, distributors and investors: request a sample, the deck, or a conversation about bringing Simplii Texture to your market.</p>
-      <img src="images/b2b-bar.webp" alt="A smoothie bar barista blending with SimpliiGood Spirulina" loading="lazy" style="width:100%;margin-top:30px;border-radius:16px;box-shadow:0 24px 64px rgba(14,42,47,.22);display:block"/>
-    </div>
-    <div class="reveal">
-      <form class="form" data-confirm="Request received ✓" novalidate>
-        <div class="field"><label>Name</label><input name="name" placeholder="Full name" required/></div>
-        <div class="field"><label>Company</label><input name="company" placeholder="Company" required/></div>
-        <div class="field"><label>Email</label><input name="email" type="email" placeholder="you@company.com" required/></div>
-        <div class="field"><label>I am a</label><select name="role" required><option value="" disabled selected>Select</option><option>Investor</option><option>Chef / Restaurant</option><option>Food manufacturer</option><option>Distributor</option><option>Press</option></select></div>
-        <div class="field full"><label>What are you interested in?</label><textarea name="msg" rows="3" placeholder="Samples, the investor deck, partnership..."></textarea></div>
-        <button type="submit" class="btn btn-yellow">Request samples / deck <span class="arr">&#8594;</span></button>
-        <p class="formmsg">Thanks, our team will be in touch within one business day.</p>
-      </form>
-    </div>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer class="footer" id="site-footer">
   <div class="wrap">
@@ -445,7 +430,7 @@
       <div class="reveal"><div class="fmark">SimpliiGood</div><p class="tag">Fresh-frozen spirulina, real superfood nutrition made clean, easy and potent. Real. Super. Food.</p><div class="badges"><span>Non-GMO</span><span>Gluten Free</span><span>Vegan</span></div></div>
       <div class="col reveal"><h4>Explore</h4><a href="simplii-green.html#benefits"><span class="fa">&#8594;&nbsp;</span>Why Spirulina</a><a href="simplii-green.html#use"><span class="fa">&#8594;&nbsp;</span>How to Use</a><a href="simplii-green.html#shop"><span class="fa">&#8594;&nbsp;</span>Shop</a><a href="simplii-green.html#stores"><span class="fa">&#8594;&nbsp;</span>Find a Store</a></div>
       <div class="col reveal"><h4>Business</h4><a href="food-service.html"><span class="fa">&#8594;&nbsp;</span>Food Service</a><a href="texture.html"><span class="fa">&#8594;&nbsp;</span>Simplii Texture</a><a href="about.html"><span class="fa">&#8594;&nbsp;</span>About</a><a href="https://shop.simpliigood.com" target="_blank" rel="noopener"><span class="fa">&#8594;&nbsp;</span>Online Shop</a></div>
-      <div class="col reveal"><h4>Get in touch</h4><a href="mailto:Contact@simpliigood.com"><span class="fa">&#8594;&nbsp;</span>Contact@simpliigood.com</a><a href="#contact"><span class="fa">&#8594;&nbsp;</span>Investor enquiries</a><p>Non-GMO &middot; Gluten Free &middot; Vegan</p></div>
+      <div class="col reveal"><h4>Get in touch</h4><a href="mailto:Contact@simpliigood.com"><span class="fa">&#8594;&nbsp;</span>Contact@simpliigood.com</a><a href="food-service.html#pricelist"><span class="fa">&#8594;&nbsp;</span>Investor enquiries</a><p>Non-GMO &middot; Gluten Free &middot; Vegan</p></div>
     </div>
     <div class="footer-bottom">
       <span class="footer-legal">&copy; 2026 SimpliiGood. All rights reserved.</span>

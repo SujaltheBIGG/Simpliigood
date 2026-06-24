@@ -121,6 +121,61 @@ h1,h2,h3{font-family:var(--display);font-weight:900;line-height:.92;letter-spaci
 
 /* ============ STATS / SUNSHINE (YELLOW) ============ */
 .sunshine{background:var(--yellow);color:var(--green)}
+.sec-img{padding:0}
+.sec-img>img{display:block;width:100%;height:auto}
+/* ---- Nutrient-facts band (coded replica of the benefits art) ---- */
+.nutfact .nf-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:48px;align-items:center}
+.nutfact .nf-copy .eyebrow{color:var(--green);display:block;margin-bottom:16px;letter-spacing:.2em;font-size:.92rem}
+.nutfact .nf-copy h2{font-size:clamp(2rem,3.35vw,3.05rem);color:var(--green);line-height:1.04;text-transform:none;letter-spacing:-.01em}
+.nutfact .nf-copy h2 .out{-webkit-text-stroke:2px var(--green);color:transparent}
+.nutfact .nf-copy p{font-family:var(--cond);font-weight:500;text-transform:none;font-size:1.22rem;margin-top:24px;line-height:1.5;max-width:48ch;color:var(--green)}
+.nutfact .nf-copy p b{font-weight:800}
+.nutfact .nf-photo{margin:0}
+.nutfact .nf-photo img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 26px 60px rgba(14,42,47,.24)}
+.nutfact .nf-rule{border:0;border-top:2px solid var(--green);margin:54px 0 42px}
+.nutfact .nf-stats{display:grid;grid-template-columns:repeat(4,1fr)}
+.nutfact .nf-stat{padding:0 38px}
+.nutfact .nf-stat:first-child{padding-left:0}
+.nutfact .nf-stat+.nf-stat{border-left:2px solid rgba(21,64,72,.5)}
+.nutfact .nf-stat b{font-family:var(--display);font-size:clamp(2.5rem,4.4vw,3.6rem);display:block;line-height:1;color:var(--green)}
+.nutfact .nf-stat span{font-family:var(--cond);font-weight:500;text-transform:none;font-size:1rem;display:block;margin-top:14px;color:var(--green);max-width:24ch}
+.nutfact .nf-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:center;margin-top:46px;background:rgba(21,64,72,.07);border-radius:16px;padding:30px 38px}
+.nutfact .nf-step h4{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.95rem;color:var(--green)}
+.nutfact .nf-step p{font-family:var(--cond);font-weight:500;text-transform:none;font-size:.97rem;margin-top:10px;line-height:1.35;color:var(--green);max-width:24ch}
+.nutfact .nf-arrow{font-family:var(--display);font-size:1.4rem;color:var(--green);padding:0 26px}
+.nutfact .nf-pills{display:flex;flex-wrap:wrap;gap:16px;margin-top:48px;justify-content:space-between;padding:0}
+.nutfact .nf-pills li{list-style:none;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:1rem;background:var(--green);color:var(--yellow);padding:1.05em 1.9em;border-radius:999px;text-align:center;flex:0 0 auto}
+/* ---- What's inside / cube-facts grid ---- */
+.cubefacts .cf-head{max-width:780px}
+.cubefacts .cf-head .eyebrow{color:var(--green);display:block;margin-bottom:18px;letter-spacing:.2em;font-size:.92rem}
+.cubefacts .cf-head h2{font-size:clamp(2.5rem,6vw,5rem);color:var(--green);line-height:.95}
+.cubefacts .cf-head p{font-family:var(--cond);font-weight:500;text-transform:none;font-size:1.18rem;margin-top:24px;line-height:1.5;max-width:52ch;color:var(--green)}
+.cubefacts .cf-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border:2px solid var(--green);border-radius:16px;overflow:hidden}
+.cubefacts .cf-cell{padding:36px 36px 34px;border-right:2px solid var(--green);border-bottom:2px solid var(--green)}
+.cubefacts .cf-cell:nth-child(3n){border-right:0}
+.cubefacts .cf-cell:nth-last-child(-n+3){border-bottom:0}
+.cubefacts .cf-num{font-family:var(--cond);font-weight:700;letter-spacing:.24em;font-size:.78rem;color:rgba(21,64,72,.42)}
+.cubefacts .cf-cell h3{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:1.18rem;color:var(--green);margin-top:22px;line-height:1.05}
+.cubefacts .cf-cell .cf-d{font-family:var(--cond);font-weight:500;text-transform:none;font-size:1rem;line-height:1.45;color:var(--green);margin-top:14px}
+.cubefacts .cf-tag{display:inline-block;margin-top:24px;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;background:var(--green);color:var(--yellow);padding:.6em 1.15em;border-radius:999px}
+.cubefacts .cf-foot{margin-top:48px;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(1.5rem,3.2vw,2.1rem);color:var(--green);display:flex;align-items:center;gap:.45em;flex-wrap:wrap;letter-spacing:-.005em}
+.cubefacts .cf-foot mark{background:var(--green);color:var(--yellow);padding:.08em .42em;border-radius:7px}
+.cubefacts .cf-disc{margin-top:30px;font-family:var(--cond);font-weight:500;text-transform:none;font-size:.84rem;line-height:1.5;color:rgba(21,64,72,.55);max-width:62ch}
+@media(max-width:900px){
+  .cubefacts .cf-grid{grid-template-columns:1fr}
+  .cubefacts .cf-cell{border-right:0;border-bottom:2px solid var(--green)}
+  .cubefacts .cf-cell:last-child{border-bottom:0}
+}
+@media(max-width:900px){
+  .nutfact .nf-top{grid-template-columns:1fr;gap:32px}
+  .nutfact .nf-stats{grid-template-columns:1fr 1fr;gap:34px 0}
+  .nutfact .nf-stat{padding:0 26px}
+  .nutfact .nf-stat:nth-child(odd){padding-left:0;border-left:0}
+  .nutfact .nf-flow{grid-template-columns:1fr;gap:20px;padding:26px 28px}
+  .nutfact .nf-arrow{display:none}
+  .nutfact .nf-pills{justify-content:flex-start;gap:12px}
+  .nutfact .nf-pills li{flex:1 1 auto}
+}
 .sunshine .sec-head h2 .out{-webkit-text-stroke:2px var(--green);color:transparent}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:30px}
 .stat{border-top:3px solid var(--green);padding-top:18px}
@@ -144,6 +199,24 @@ h1,h2,h3{font-family:var(--display);font-weight:900;line-height:.92;letter-spaci
 .cmp li{font-family:var(--cond);font-weight:500;text-transform:none;font-size:1.05rem;padding-left:30px;position:relative;line-height:1.35}
 .cmp.bad li::before{content:"✕";position:absolute;left:0;color:var(--strawberry);font-weight:700}
 .cmp.good li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+/* comparison table (fresh-vs-powder) */
+.cmpblock{margin-top:20px}
+.cmptable{width:100%;border-collapse:collapse;margin-top:24px}
+.cmptable th,.cmptable td{text-align:left;padding:20px 26px;vertical-align:top;border-bottom:1px solid rgba(255,255,255,.16)}
+.cmptable thead th{font-family:var(--cond);font-weight:700;font-size:1.2rem;color:var(--white);text-transform:none;padding-bottom:18px;border-bottom:2px solid rgba(255,255,255,.34)}
+.cmptable thead th.col-good{color:var(--yellow)}
+.cmptable tbody th{font-family:var(--cond);font-weight:700;text-transform:none;font-size:1.05rem;color:rgba(255,255,255,.66);width:24%}
+.cmptable tbody td{font-family:var(--cond);font-weight:500;text-transform:none;font-size:1.1rem;color:var(--cream);width:38%}
+.cmptable tbody td.col-good{color:var(--white)}
+.cmptable tbody tr:last-child th,.cmptable tbody tr:last-child td{border-bottom:0}
+.cmp-close{font-family:var(--cond);font-weight:600;text-transform:none;font-size:1.2rem;color:var(--cream);margin-top:30px}
+.cmp-close .y{color:var(--yellow);font-weight:700}
+@media(max-width:640px){
+  .cmptable th,.cmptable td{padding:14px 12px}
+  .cmptable thead th{font-size:.98rem}
+  .cmptable tbody th{font-size:.9rem;width:30%}
+  .cmptable tbody td{font-size:.95rem}
+}
 .fresh-media{margin-top:30px;display:flex;gap:20px;align-items:stretch}
 .fresh-media img{object-fit:cover;border-radius:18px;display:block}
 .fresh-media img:first-child{flex:1 1 auto;min-width:0;width:100%;height:clamp(340px,40vw,440px)}
@@ -395,8 +468,8 @@ html.lenis,html.lenis body{height:auto}
 .scroll-prog{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--yellow),var(--starburst) 60%,var(--raspberry));z-index:300;pointer-events:none}
 /* film grain (no blend-mode, composited only) */
 .grain{position:fixed;inset:0;z-index:280;pointer-events:none;opacity:.028;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.cursor,.cursor-dot{display:none}
-/* reactive cursor ring: native cursor stays, this trails + grows over interactive things (fine-pointer only) */
+.cursor,.cursor-dot{display:none!important}
+/* reactive cursor ring removed (was the hover element following the mouse); native cursor stays */
 @media (hover:hover) and (pointer:fine){
   .cursor{display:block;position:fixed;top:0;left:0;width:34px;height:34px;margin:-17px 0 0 -17px;
     border:1.6px solid rgba(21,64,72,.5);border-radius:50%;pointer-events:none;z-index:9998;opacity:0;
@@ -796,13 +869,12 @@ p{text-wrap:pretty}
   <div class="wrap nav-inner">
     <a href="index.html" class="brand"><img src="images/wordmark.png" alt="SimpliiGood" onerror="this.style.display='none'"/></a>
     <nav class="nav-links" id="navLinks">
-      <a href="simplii-green.html#benefits">Why Spirulina</a>
-      <a href="simplii-green.html#use">How to Use</a>
+      <a href="simplii-green.html#inside">What's Inside</a>
+      <a href="simplii-green.html#fresh">Why Fresh</a>
       <a href="food-service.html">Food Service</a>
       <a href="texture.html">Simplii Texture</a>
-      <a href="simplii-green.html#stores">Find a Store</a>
       <a href="about.html">About</a>
-      <a class="btn btn-green" href="https://shop.simpliigood.com" target="_blank" rel="noopener" data-cursor="Shop">Shop Now <span class="arr">&#8594;</span></a>
+      <a class="btn btn-green" href="simplii-green.html#stores" data-cursor="Store">Find a Store <span class="arr">&#8594;</span></a>
     </nav>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -878,54 +950,125 @@ p{text-wrap:pretty}
 </div>
 
 <!-- ============ SUNSHINE / BENEFITS (YELLOW) ============ -->
-<section class="sec sunshine" id="benefits">
+<section class="sec sunshine nutfact" id="benefits">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">What it is</span>
-      <h2>Spirulina is a <span class="out">solar-powered</span> nutrient factory.</h2>
-      <p>It converts sunlight into complete protein, iron, B-vitamins and antioxidants, the most nutrient-dense food on earth. SimpliiGood is the only one that keeps it fresh-frozen: alive, not dead powder.</p>
+    <div class="nf-top">
+      <div class="nf-copy reveal">
+        <span class="eyebrow">What it is</span>
+        <h2>Spirulina is the most <span class="out">nutrient-dense food</span> on earth. Ours is alive.</h2>
+        <p>Most spirulina gets dried, powdered, and packed into a jar &mdash; losing flavor, color, and nutrients along the way. We skip all of that. <b>We freeze it fresh, hours after harvest</b>, so what lands in your freezer is as close to the living plant as it gets.</p>
+      </div>
+      <figure class="nf-photo reveal">
+        <img src="images/farm-greenhouses.webp" alt="Aerial view of the SimpliiGood spirulina farm greenhouses beside a freshwater pond" loading="lazy">
+      </figure>
     </div>
-    <div class="stats">
-      <div class="stat" data-reveal="rise"><b><span class="count" data-to="100">0</span>%</b><span>Real, whole food, never an extract</span></div>
-      <div class="stat" data-reveal="rise"><b><span class="count" data-to="10">0</span></b><span>Fresh cubes in every tray</span></div>
-      <div class="stat" data-reveal="rise"><b><span class="count" data-to="0">0</span></b><span>Additives, fillers or preservatives</span></div>
-      <div class="stat" data-reveal="rise"><b><span class="count" data-to="1">0</span></b><span>Traceable farm, harvested to order</span></div>
+
+    <hr class="nf-rule reveal">
+
+    <div class="nf-stats reveal">
+      <div class="nf-stat"><b>24h</b><span>From harvest to frozen &mdash; no drying, no delay</span></div>
+      <div class="nf-stat"><b>10</b><span>Pre-portioned cubes per tray, ready to use</span></div>
+      <div class="nf-stat"><b>1</b><span>Ingredient. Spirulina and water. That&rsquo;s it.</span></div>
+      <div class="nf-stat"><b>100%</b><span>Whole food &mdash; never an extract, never a powder</span></div>
     </div>
-    <ul class="nutri reveal">
-      <li>Complete plant protein</li><li>Good source of iron</li><li>Vitamins A &middot; B &middot; E</li><li>Phycocyanin antioxidant</li><li>Flavor-free</li>
+
+    <div class="nf-flow reveal">
+      <div class="nf-step"><h4>Farm</h4><p>Harvested daily at our freshwater pond</p></div>
+      <div class="nf-arrow" aria-hidden="true">&rarr;</div>
+      <div class="nf-step"><h4>Freeze</h4><p>Flash-frozen within 24 hours of harvest</p></div>
+      <div class="nf-arrow" aria-hidden="true">&rarr;</div>
+      <div class="nf-step"><h4>Pack</h4><p>Portioned into 10-cube trays, sealed fresh</p></div>
+      <div class="nf-arrow" aria-hidden="true">&rarr;</div>
+      <div class="nf-step"><h4>Your Freezer</h4><p>Ships cold. Ready when you are.</p></div>
+    </div>
+
+    <ul class="nf-pills reveal">
+      <li>Complete plant protein</li>
+      <li>Good source of iron</li>
+      <li>Vitamins A &middot; B &middot; E</li>
+      <li>Phycocyanin antioxidant</li>
+      <li>Spirulina + water only</li>
     </ul>
   </div>
 </section>
 
+<!-- ============ WHAT'S INSIDE / CUBE FACTS (YELLOW) ============ -->
+<section class="sec sunshine cubefacts" id="inside">
+  <div class="wrap">
+    <div class="cf-head reveal">
+      <span class="eyebrow">What's inside</span>
+      <h2>This little cube does a lot.</h2>
+      <p>Spirulina packs more nutrition per gram than almost anything else you'll put in your blender. Here's what two cubes actually give you:</p>
+    </div>
+
+    <div class="cf-grid reveal">
+      <div class="cf-cell">
+        <div class="cf-num">01</div>
+        <h3>Complete plant protein</h3>
+        <p class="cf-d">All essential amino acids, in a form your body can actually use &mdash; not just listed on a label.</p>
+        <span class="cf-tag">Protein</span>
+      </div>
+      <div class="cf-cell">
+        <div class="cf-num">02</div>
+        <h3>Iron</h3>
+        <p class="cf-d">A meaningful plant-based source &mdash; especially useful if you're not eating meat.</p>
+        <span class="cf-tag">Minerals</span>
+      </div>
+      <div class="cf-cell">
+        <div class="cf-num">03</div>
+        <h3>B vitamins</h3>
+        <p class="cf-d">Including B12 &mdash; genuinely rare in whole plant foods, and here without fortification.</p>
+        <span class="cf-tag">Vitamins</span>
+      </div>
+      <div class="cf-cell">
+        <div class="cf-num">04</div>
+        <h3>Antioxidants</h3>
+        <p class="cf-d">Phycocyanin and beta-carotene &mdash; both intact, because we freeze instead of dry.</p>
+        <span class="cf-tag">Antioxidants</span>
+      </div>
+      <div class="cf-cell">
+        <div class="cf-num">05</div>
+        <h3>Chlorophyll</h3>
+        <p class="cf-d">The real stuff. Preserved by freezing instead of lost to the heat of drying.</p>
+        <span class="cf-tag">Fresh-frozen</span>
+      </div>
+      <div class="cf-cell">
+        <div class="cf-num">06</div>
+        <h3>Whole-food nutrition</h3>
+        <p class="cf-d">Nothing isolated. Nothing extracted. Just spirulina &mdash; as close to the living plant as it gets.</p>
+        <span class="cf-tag">Real food</span>
+      </div>
+    </div>
+
+    <p class="cf-foot reveal">Two cubes. <mark>Real food.</mark> Zero powder.</p>
+    <p class="cf-disc reveal">* These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+  </div>
+</section>
+
 <!-- ============ FRESH VS DRIED (GREEN) ============ -->
-<section class="sec fresh">
+<section class="sec fresh" id="fresh">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">The difference</span>
-      <h2>Not all spirulina is <span class="y">created equal.</span></h2>
-      <p>Almost all the spirulina sold in America is a dried, stale powder shipped from overseas, with a harsh, swampy taste. Ours is a deep-green, fresh-frozen food, frozen the same day we harvest it.</p>
+      <h2>Powder had its moment. <span class="y">This is better.</span></h2>
+      <p>Most people's first experience with spirulina is a green cloud of powder that smells like a fish tank. We get it. This is different.</p>
     </div>
-    <div class="compare">
-      <div class="cmp bad reveal">
-        <span class="tag">The old way</span>
-        <h3>Dried powder</h3>
-        <ul>
-          <li>Heat-dried &amp; oxidized, nutrients degraded</li>
-          <li>Sits on shelves for months</li>
-          <li>Harsh, swampy, hard to drink</li>
-          <li>Shipped from overseas, untraceable</li>
-        </ul>
-      </div>
-      <div class="cmp good reveal">
-        <span class="tag">The SimpliiGood way</span>
-        <h3>Fresh-frozen cube</h3>
-        <ul>
-          <li>Flash-frozen within minutes of harvest</li>
-          <li>Live enzymes, chlorophyll &amp; phycocyanin intact</li>
-          <li>Flavor-free, drop it into anything</li>
-          <li>One farm, fully traceable</li>
-        </ul>
-      </div>
+    <div class="cmpblock reveal">
+      <table class="cmptable">
+        <thead>
+          <tr><th class="col-attr"></th><th class="col-bad">Dried Powder</th><th class="col-good">SimpliiGood Cubes</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>Format</th><td>Loose powder</td><td class="col-good">Pre-portioned cubes</td></tr>
+          <tr><th>Serving</th><td>Measure every time</td><td class="col-good">2 cubes &mdash; done</td></tr>
+          <tr><th>Mess</th><td>Inevitable</td><td class="col-good">None</td></tr>
+          <tr><th>Smell</th><td>Let's call it "earthy"</td><td class="col-good">Clean and mild</td></tr>
+          <tr><th>Storage</th><td>Back of a cabinet</td><td class="col-good">Front of your freezer</td></tr>
+          <tr><th>Texture in drinks</th><td>Sometimes gritty</td><td class="col-good">Blends completely smooth</td></tr>
+          <tr><th>Feels like</th><td>A supplement</td><td class="col-good">Real food</td></tr>
+        </tbody>
+      </table>
+      <p class="cmp-close"><span class="y">Real food</span> beats powdered promises.</p>
     </div>
     <div class="fresh-media" data-reveal="fly" data-fly="left">
       <img src="images/audience-athletes.webp" alt="Marathon runners and endurance athletes fueled by SimpliiGood spirulina" />
