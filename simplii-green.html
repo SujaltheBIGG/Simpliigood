@@ -189,6 +189,55 @@ h1,h2,h3{font-family:var(--display);font-weight:900;line-height:.92;letter-spaci
   .cubefacts .cf-cell{border-right:0;border-bottom:2px solid var(--green)}
   .cubefacts .cf-cell:last-child{border-bottom:0}
 }
+/* ---- What's Inside (wi): floating-cube redesign ---- */
+.wi{--mist:#CFE0DC;--mist-dim:#9FB7B4;--green-deep:#0E2E34;--line:rgba(255,255,255,.10);--wease:cubic-bezier(.22,.61,.36,1);font-family:var(--body);background:radial-gradient(120% 90% at 88% -8%, rgba(254,230,45,.16) 0%, rgba(254,230,45,0) 45%), radial-gradient(90% 70% at 6% 110%, rgba(0,0,0,.28) 0%, rgba(0,0,0,0) 55%), linear-gradient(168deg, var(--green) 0%, var(--green-deep) 100%);color:var(--mist);padding:clamp(56px,7vw,104px) clamp(20px,5vw,72px);position:relative;overflow:hidden;isolation:isolate}
+.wi::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.5;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E")}
+.wi-inner{max-width:1240px;margin:0 auto}
+.wi-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:clamp(24px,4vw,56px);align-items:center;margin-bottom:clamp(48px,6vw,80px)}
+.wi .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--cond);font-size:13px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--yellow);margin-bottom:22px}
+.wi .eyebrow::before{content:"";width:34px;height:2px;background:var(--yellow);border-radius:2px}
+.wi-title{margin:0;font-family:var(--display);font-weight:900;font-size:clamp(44px,7.4vw,104px);line-height:.93;letter-spacing:-.02em;text-transform:uppercase;color:var(--cream);text-wrap:balance}
+.wi-title .hl{color:var(--yellow);display:inline-block}
+.wi-sub{margin:26px 0 0;max-width:46ch;font-family:var(--cond);font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:var(--mist);font-weight:500;text-transform:none}
+.wi-cube{position:relative;aspect-ratio:1/.92;display:flex;align-items:center;justify-content:center}
+.cube-glow{position:absolute;inset:-6% -4% -10%;background:radial-gradient(circle at 50% 46%, rgba(254,230,45,.42) 0%, rgba(120,210,170,.18) 32%, rgba(254,230,45,0) 66%);filter:blur(6px);z-index:0;animation:wiglow 6.5s var(--wease) infinite}
+.cube-float{position:relative;z-index:2;width:100%;animation:wifloat 7s var(--wease) infinite;transform-origin:50% 60%;will-change:transform}
+.cube-img{display:block;width:100%;height:auto;filter:drop-shadow(0 28px 34px rgba(0,0,0,.42))}
+.cube-shadow{position:absolute;left:50%;bottom:-6%;z-index:1;width:64%;height:8%;translate:-50% 0;background:radial-gradient(ellipse at center, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 70%);filter:blur(4px);animation:wishadow 7s var(--wease) infinite}
+.wi .speck{position:absolute;z-index:3;border-radius:50%;background:rgba(255,255,255,.9);box-shadow:0 0 6px rgba(255,255,255,.7);pointer-events:none;opacity:0}
+.wi .speck.s1{width:5px;height:5px;left:24%;top:30%;animation:widrift 5.5s var(--wease) infinite .4s}
+.wi .speck.s2{width:3px;height:3px;left:70%;top:24%;animation:widrift 6.4s var(--wease) infinite 1.8s}
+.wi .speck.s3{width:4px;height:4px;left:58%;top:60%;animation:widrift 7.2s var(--wease) infinite 3.1s}
+.wi .speck.s4{width:2px;height:2px;left:36%;top:54%;animation:widrift 6s var(--wease) infinite 2.4s}
+.wi-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,1.6vw,22px)}
+.fact{position:relative;background:linear-gradient(180deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,.025) 100%);border:1px solid var(--line);border-radius:22px;padding:30px 28px 26px;backdrop-filter:blur(2px);transition:transform .5s var(--wease), border-color .4s ease, box-shadow .5s var(--wease), background .4s ease}
+.fact:hover{transform:translateY(-6px);border-color:rgba(254,230,45,.55);background:linear-gradient(180deg, rgba(255,255,255,.085) 0%, rgba(255,255,255,.03) 100%);box-shadow:0 22px 40px -22px rgba(0,0,0,.6)}
+.fact-ic{width:54px;height:54px;border-radius:15px;display:flex;align-items:center;justify-content:center;background:rgba(254,230,45,.12);border:1px solid rgba(254,230,45,.28);margin-bottom:20px;transition:background .4s ease, transform .5s var(--wease)}
+.fact:hover .fact-ic{background:rgba(254,230,45,.2);transform:scale(1.06) rotate(-3deg)}
+.fact-ic svg{width:27px;height:27px;stroke:var(--yellow);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.fact-title{margin:0 0 10px;font-family:var(--display);font-size:19px;font-weight:800;letter-spacing:.005em;text-transform:uppercase;color:var(--cream);line-height:1.12}
+.fact-desc{margin:0 0 22px;font-family:var(--cond);font-size:15px;line-height:1.55;color:var(--mist);font-weight:500;text-transform:none}
+.fact-pill{display:inline-block;font-family:var(--cond);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);padding:6px 13px;border-radius:999px;border:1px solid rgba(254,230,45,.34)}
+.wi-foot{margin-top:clamp(40px,5vw,68px);display:flex;flex-wrap:wrap;align-items:center;gap:14px;font-family:var(--display);font-size:clamp(26px,3.6vw,44px);font-weight:900;letter-spacing:-.01em;text-transform:uppercase;color:var(--cream);line-height:1}
+.wi-foot .foot-hl{background:var(--yellow);color:var(--green-deep);padding:.12em .32em .2em;border-radius:12px;transform:rotate(-1.5deg);display:inline-block}
+.wi-disc{margin:26px 0 0;font-family:var(--cond);font-weight:500;text-transform:none;font-size:12px;line-height:1.5;color:var(--mist-dim);max-width:64ch}
+@media(max-width:920px){
+  .wi-head{grid-template-columns:1fr;gap:8px}
+  .wi-cube{order:-1;max-width:340px;margin:0 auto 6px;width:100%}
+  .wi-grid{grid-template-columns:repeat(2,1fr)}
+  .wi-sub{max-width:none}
+}
+@media(max-width:560px){
+  .wi-grid{grid-template-columns:1fr}
+  .wi-cube{max-width:280px}
+}
+@media(prefers-reduced-motion:reduce){
+  .cube-float,.cube-glow,.cube-shadow,.wi .speck{animation:none!important}
+}
+@keyframes wifloat{0%,100%{transform:translateY(0) rotate(-1.2deg)}50%{transform:translateY(-18px) rotate(1.6deg)}}
+@keyframes wiglow{0%,100%{opacity:.85;transform:scale(.97)}50%{opacity:1;transform:scale(1.05)}}
+@keyframes wishadow{0%,100%{opacity:.55;transform:translate(-50%,0) scale(1)}50%{opacity:.32;transform:translate(-50%,0) scale(.8)}}
+@keyframes widrift{0%{opacity:0;transform:translateY(6px) scale(.6)}25%{opacity:.95}60%{opacity:.5}100%{opacity:0;transform:translateY(-26px) scale(1)}}
 @media(max-width:900px){
   .nutfact2 .nf2-top{grid-template-columns:1fr;gap:30px}
   .nutfact2 .nf2-flow{grid-template-columns:1fr 1fr;gap:34px 22px;margin-top:clamp(-150px,-24vw,-110px)}
@@ -921,8 +970,10 @@ p{text-wrap:pretty}
   <div class="wrap nav-inner">
     <a href="index.html" class="brand"><img src="images/wordmark.png" alt="SimpliiGood" onerror="this.style.display='none'"/></a>
     <nav class="nav-links" id="navLinks">
+      <a href="simplii-green.html#benefits">Why Spirulina</a>
       <a href="simplii-green.html#inside">What's Inside</a>
       <a href="simplii-green.html#fresh">Why Fresh</a>
+      <a href="simplii-green.html#use">How to Use</a>
       <div class="nav-dd">
         <a class="nav-dd-toggle" role="button" tabindex="0" aria-haspopup="true">Where to Buy <span class="dd-caret">&#9662;</span></a>
         <div class="nav-dd-menu">
@@ -932,8 +983,7 @@ p{text-wrap:pretty}
           <a href="texture.html">Simplii Texture</a>
         </div>
       </div>
-      <a href="simplii-green.html#use">How to Use</a>
-      <a href="about.html">About</a>
+
       <a class="btn btn-green" href="simplii-green.html#stores" data-cursor="Store">Find a Store <span class="arr">&#8594;</span></a>
     </nav>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -960,6 +1010,67 @@ p{text-wrap:pretty}
       <div class="hero-blob"></div>
       <video class="px" data-speed="0.12" src="videos/hero-video.mp4" poster="images/hero-video-poster.jpg" autoplay muted loop playsinline aria-label="SimpliiGood Spirulina"></video>
     </div>
+  </div>
+</section>
+
+<!-- ============ WHAT'S INSIDE / CUBE FACTS (YELLOW) ============ -->
+<section class="wi" id="inside" aria-labelledby="wi-title">
+  <div class="wi-inner">
+    <div class="wi-head">
+      <div class="wi-head-text reveal">
+        <span class="eyebrow">What's Inside</span>
+        <h2 class="wi-title" id="wi-title">This little cube<br><span class="hl">does a lot.</span></h2>
+        <p class="wi-sub">Spirulina packs more nutrition per gram than almost anything else you'll put in your blender. Here's what two cubes actually give you.</p>
+      </div>
+      <div class="wi-cube" aria-hidden="true">
+        <div class="cube-glow"></div>
+        <div class="cube-float"><img class="cube-img" src="images/cube-inside.webp" alt=""></div>
+        <div class="cube-shadow"></div>
+        <span class="speck s1"></span><span class="speck s2"></span><span class="speck s3"></span><span class="speck s4"></span>
+      </div>
+    </div>
+
+    <ul class="wi-grid">
+      <li class="fact reveal">
+        <div class="fact-ic"><svg viewBox="0 0 24 24"><path d="M4 20C4 12 9 6 20 5c0 10-5 15-13 15a5.5 5.5 0 0 1-3-1z"/><path d="M6.5 18.5C8.5 13.5 11.5 10.5 16 8.5"/></svg></div>
+        <h3 class="fact-title">Complete plant protein</h3>
+        <p class="fact-desc">All essential amino acids, in a form your body can actually use &mdash; not just listed on a label.</p>
+        <span class="fact-pill">Protein</span>
+      </li>
+      <li class="fact reveal">
+        <div class="fact-ic"><svg viewBox="0 0 24 24"><path d="M12 3c3.5 4.3 6 7.2 6 10a6 6 0 0 1-12 0c0-2.8 2.5-5.7 6-10z"/><path d="M9.5 13.5a2.5 2.5 0 0 0 2.5 2.5"/></svg></div>
+        <h3 class="fact-title">Iron</h3>
+        <p class="fact-desc">A meaningful plant-based source &mdash; especially useful if you're not eating meat.</p>
+        <span class="fact-pill">Minerals</span>
+      </li>
+      <li class="fact reveal">
+        <div class="fact-ic"><svg viewBox="0 0 24 24"><path d="M7.5 16.5a3.5 3.5 0 0 1 0-5l4-4a3.5 3.5 0 1 1 5 5l-4 4a3.5 3.5 0 0 1-5 0z"/><path d="M10 9l5 5"/></svg></div>
+        <h3 class="fact-title">B vitamins</h3>
+        <p class="fact-desc">Including B12 &mdash; genuinely rare in whole plant foods, and here without fortification.</p>
+        <span class="fact-pill">Vitamins</span>
+      </li>
+      <li class="fact reveal">
+        <div class="fact-ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3 class="fact-title">Antioxidants</h3>
+        <p class="fact-desc">Phycocyanin and beta-carotene &mdash; both intact, because we freeze instead of dry.</p>
+        <span class="fact-pill">Antioxidants</span>
+      </li>
+      <li class="fact reveal">
+        <div class="fact-ic"><svg viewBox="0 0 24 24"><path d="M12 21v-9"/><path d="M12 13c0-3.3-2.2-5.5-6.5-5.5C5.5 11.8 7.7 14 12 14z"/><path d="M12 12c0-3.3 2.2-5.5 6.5-5.5C18.5 10.8 16.3 13 12 13z"/></svg></div>
+        <h3 class="fact-title">Chlorophyll</h3>
+        <p class="fact-desc">The real stuff. Preserved by freezing instead of lost to the heat of drying.</p>
+        <span class="fact-pill">Fresh-frozen</span>
+      </li>
+      <li class="fact reveal">
+        <div class="fact-ic"><svg viewBox="0 0 24 24"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M7.5 11a4.5 4.5 0 0 1 9 0"/><path d="M2 11h20"/></svg></div>
+        <h3 class="fact-title">Whole-food nutrition</h3>
+        <p class="fact-desc">Nothing isolated. Nothing extracted. Just spirulina &mdash; as close to the living plant as it gets.</p>
+        <span class="fact-pill">Real food</span>
+      </li>
+    </ul>
+
+    <div class="wi-foot reveal">Two cubes. <span class="foot-hl">Real food.</span> Zero powder.</div>
+    <p class="wi-disc reveal">* These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
   </div>
 </section>
 
@@ -1008,6 +1119,28 @@ p{text-wrap:pretty}
     <span>Real. Super. Food.</span><span>SimpliiGood Spirulina</span><span>Sunshine in a cube</span><span>Fresh-frozen, never dried</span>
   </div>
 </div>
+
+<!-- ============ DROP IT, PINNED HORIZONTAL USE CASES ============ -->
+<section class="dropit-h" id="use">
+  <div class="hscroll" id="hscroll">
+    <div class="htrack" id="htrack">
+      <div class="hpanel intro">
+        <p class="dropline2">Drop it. <em>Blend it.</em></p>
+        <span class="eyebrow">Recipes</span>
+        <h2>One cube. <span class="y">Endless recipes.</span></h2>
+        <p class="ip">From a 2-minute morning lemonade to a creamy yogurt bowl, every recipe hides a whole cube of fresh-frozen spirulina, no swampy taste, just real nutrition. Tap any recipe to see it.</p>
+        <div class="hhint">Scroll to browse <span class="ar">&#8594;</span></div>
+      </div>
+      <div class="hpanel"><button class="uc" data-recipe="berry" data-cursor="View" aria-label="View Berry Iron-Support Smoothie recipe"><div class="ph"><img src="images/recipe-berry.webp" alt="Berry Iron-Support Smoothie"/></div><div class="body"><span class="n">3 min &middot; Easy</span><h3>Berry Iron-Support Smoothie</h3><p>Iron-rich spirulina meets vitamin C berries for maximum absorption.</p><span class="uc-view">View recipe <span class="arr">&#8594;</span></span></div></button></div>
+      <div class="hpanel"><button class="uc" data-recipe="tropical" data-cursor="View" aria-label="View Tropical Kids-Friendly Smoothie recipe"><div class="ph"><img src="images/recipe-tropical.webp" alt="Tropical Kids-Friendly Smoothie"/></div><div class="body"><span class="n">3 min &middot; Beginner</span><h3>Tropical Kids Smoothie</h3><p>Sweet, fruity and kid-approved, they'll never know it's spirulina.</p><span class="uc-view">View recipe <span class="arr">&#8594;</span></span></div></button></div>
+      <div class="hpanel"><button class="uc" data-recipe="yogurt" data-cursor="View" aria-label="View Creamy Spirulina Yogurt Bowl recipe"><div class="ph"><img src="images/recipe-yogurt.webp" alt="Creamy Spirulina Yogurt Bowl"/></div><div class="body"><span class="n">5 min &middot; Beginner</span><h3>Creamy Yogurt Bowl</h3><p>A gut-friendly breakfast bowl that feels like a treat.</p><span class="uc-view">View recipe <span class="arr">&#8594;</span></span></div></button></div>
+      <div class="hpanel"><button class="uc" data-recipe="lemonade" data-cursor="View" aria-label="View Green Lemonade Daily Ritual recipe"><div class="ph"><img src="images/recipe-lemonade.webp" alt="Green Lemonade Daily Ritual"/></div><div class="body"><span class="n">2 min &middot; Beginner</span><h3>Green Lemonade Ritual</h3><p>Your simple, everyday spirulina habit. Light and refreshing.</p><span class="uc-view">View recipe <span class="arr">&#8594;</span></span></div></button></div>
+      <div class="hpanel"><button class="uc" data-recipe="choc" data-cursor="View" aria-label="View Chocolate Peanut Butter Spirulina Smoothie recipe"><div class="ph"><img src="images/recipe-choc.webp" alt="Chocolate Peanut Butter Spirulina Smoothie"/></div><div class="body"><span class="n">3 min &middot; Easy</span><h3>Choc Peanut Butter Smoothie</h3><p>A rich, dessert-like smoothie that delivers serious nutrition.</p><span class="uc-view">View recipe <span class="arr">&#8594;</span></span></div></button></div>
+      <div class="hpanel"><button class="uc" data-recipe="dip" data-cursor="View" aria-label="View Spirulina Avocado Dip recipe"><div class="ph"><img src="images/recipe-dip.webp" alt="Spirulina Avocado Dip"/></div><div class="body"><span class="n">5 min &middot; Easy</span><h3>Spirulina Avocado Dip</h3><p>A savory way to enjoy spirulina, perfect for sharing.</p><span class="uc-view">View recipe <span class="arr">&#8594;</span></span></div></button></div>
+      <div class="hpanel"><div class="uc uc-cta" style="justify-content:center;align-items:flex-start;background:var(--yellow);border-color:var(--yellow)"><div class="body"><span class="n" style="color:var(--green)">Recipe library</span><h3 style="color:var(--green)">More where that came from.</h3><p style="color:rgba(21,64,72,.8)">Smoothies, bowls, drinks &amp; savory dips, explore the full collection.</p><a class="btn btn-green" style="margin-top:18px" href="https://n6hxi54aj4soy.kimi.page/#/recipes" target="_blank" rel="noopener">Browse all recipes <span class="arr">&#8594;</span></a></div></div></div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ SUNSHINE / BENEFITS (YELLOW) ============ -->
 <section class="sec nutfact2" id="benefits">
@@ -1082,59 +1215,6 @@ p{text-wrap:pretty}
   </div>
 </section>
 
-<!-- ============ WHAT'S INSIDE / CUBE FACTS (YELLOW) ============ -->
-<section class="sec sunshine cubefacts" id="inside">
-  <div class="wrap">
-    <div class="cf-head reveal">
-      <span class="eyebrow">What's inside</span>
-      <h2>This little cube does a lot.</h2>
-      <p>Spirulina packs more nutrition per gram than almost anything else you'll put in your blender. Here's what two cubes actually give you:</p>
-    </div>
-
-    <div class="cf-grid reveal">
-      <div class="cf-cell">
-        <div class="cf-num">01</div>
-        <h3>Complete plant protein</h3>
-        <p class="cf-d">All essential amino acids, in a form your body can actually use &mdash; not just listed on a label.</p>
-        <span class="cf-tag">Protein</span>
-      </div>
-      <div class="cf-cell">
-        <div class="cf-num">02</div>
-        <h3>Iron</h3>
-        <p class="cf-d">A meaningful plant-based source &mdash; especially useful if you're not eating meat.</p>
-        <span class="cf-tag">Minerals</span>
-      </div>
-      <div class="cf-cell">
-        <div class="cf-num">03</div>
-        <h3>B vitamins</h3>
-        <p class="cf-d">Including B12 &mdash; genuinely rare in whole plant foods, and here without fortification.</p>
-        <span class="cf-tag">Vitamins</span>
-      </div>
-      <div class="cf-cell">
-        <div class="cf-num">04</div>
-        <h3>Antioxidants</h3>
-        <p class="cf-d">Phycocyanin and beta-carotene &mdash; both intact, because we freeze instead of dry.</p>
-        <span class="cf-tag">Antioxidants</span>
-      </div>
-      <div class="cf-cell">
-        <div class="cf-num">05</div>
-        <h3>Chlorophyll</h3>
-        <p class="cf-d">The real stuff. Preserved by freezing instead of lost to the heat of drying.</p>
-        <span class="cf-tag">Fresh-frozen</span>
-      </div>
-      <div class="cf-cell">
-        <div class="cf-num">06</div>
-        <h3>Whole-food nutrition</h3>
-        <p class="cf-d">Nothing isolated. Nothing extracted. Just spirulina &mdash; as close to the living plant as it gets.</p>
-        <span class="cf-tag">Real food</span>
-      </div>
-    </div>
-
-    <p class="cf-foot reveal">Two cubes. <mark>Real food.</mark> Zero powder.</p>
-    <p class="cf-disc reveal">* These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
-  </div>
-</section>
-
 <!-- ============ FRESH VS DRIED (GREEN) ============ -->
 <section class="sec fresh" id="fresh">
   <div class="wrap">
@@ -1188,24 +1268,26 @@ p{text-wrap:pretty}
   </div>
 </section>
 
-<!-- ============ DROP IT, PINNED HORIZONTAL USE CASES ============ -->
-<section class="dropit-h" id="use">
-  <div class="hscroll" id="hscroll">
-    <div class="htrack" id="htrack">
-      <div class="hpanel intro">
-        <p class="dropline2">Drop it. <em>Blend it.</em></p>
-        <span class="eyebrow">Recipes</span>
-        <h2>One cube. <span class="y">Endless recipes.</span></h2>
-        <p class="ip">From a 2-minute morning lemonade to a creamy yogurt bowl, every recipe hides a whole cube of fresh-frozen spirulina, no swampy taste, just real nutrition. Tap any recipe to see it.</p>
-        <div class="hhint">Scroll to browse <span class="ar">&#8594;</span></div>
+<!-- ============ STORE LOCATOR ============ -->
+<section class="sec stores" id="stores">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Where to buy</span>
+      <h2>Find us in the freezer aisle.</h2>
+      <p>SimpliiGood is stocked at <b id="locTotal">264</b> locations across the US. Tap a region on the map, or search by city, store or zip.</p>
+    </div>
+    <div class="locator reveal">
+      <div id="storeMap" aria-label="SimpliiGood store map"></div>
+      <div class="loc-panel">
+        <div class="loc-search"><input id="locSearch" type="search" placeholder="Search by city, store or zip code" aria-label="Search stores"/></div>
+        <div class="loc-chips" id="locChips"></div>
+        <div class="loc-count" id="locCount"></div>
+        <div class="loc-list" id="locList"></div>
       </div>
-      <div class="hpanel"><button class="uc" data-recipe="berry" data-cursor="View" aria-label="View Berry Iron-Support Smoothie recipe"><div class="ph"><img src="images/recipe-berry.webp" alt="Berry Iron-Support Smoothie"/></div><div class="body"><span class="n">3 min &middot; Easy</span><h3>Berry Iron-Support Smoothie</h3><p>Iron-rich spirulina meets vitamin C berries for maximum absorption.</p><span class="uc-view">View recipe <span class="arr">&#8594;</span></span></div></button></div>
-      <div class="hpanel"><button class="uc" data-recipe="tropical" data-cursor="View" aria-label="View Tropical Kids-Friendly Smoothie recipe"><div class="ph"><img src="images/recipe-tropical.webp" alt="Tropical Kids-Friendly Smoothie"/></div><div class="body"><span class="n">3 min &middot; Beginner</span><h3>Tropical Kids Smoothie</h3><p>Sweet, fruity and kid-approved, they'll never know it's spirulina.</p><span class="uc-view">View recipe <span class="arr">&#8594;</span></span></div></button></div>
-      <div class="hpanel"><button class="uc" data-recipe="yogurt" data-cursor="View" aria-label="View Creamy Spirulina Yogurt Bowl recipe"><div class="ph"><img src="images/recipe-yogurt.webp" alt="Creamy Spirulina Yogurt Bowl"/></div><div class="body"><span class="n">5 min &middot; Beginner</span><h3>Creamy Yogurt Bowl</h3><p>A gut-friendly breakfast bowl that feels like a treat.</p><span class="uc-view">View recipe <span class="arr">&#8594;</span></span></div></button></div>
-      <div class="hpanel"><button class="uc" data-recipe="lemonade" data-cursor="View" aria-label="View Green Lemonade Daily Ritual recipe"><div class="ph"><img src="images/recipe-lemonade.webp" alt="Green Lemonade Daily Ritual"/></div><div class="body"><span class="n">2 min &middot; Beginner</span><h3>Green Lemonade Ritual</h3><p>Your simple, everyday spirulina habit. Light and refreshing.</p><span class="uc-view">View recipe <span class="arr">&#8594;</span></span></div></button></div>
-      <div class="hpanel"><button class="uc" data-recipe="choc" data-cursor="View" aria-label="View Chocolate Peanut Butter Spirulina Smoothie recipe"><div class="ph"><img src="images/recipe-choc.webp" alt="Chocolate Peanut Butter Spirulina Smoothie"/></div><div class="body"><span class="n">3 min &middot; Easy</span><h3>Choc Peanut Butter Smoothie</h3><p>A rich, dessert-like smoothie that delivers serious nutrition.</p><span class="uc-view">View recipe <span class="arr">&#8594;</span></span></div></button></div>
-      <div class="hpanel"><button class="uc" data-recipe="dip" data-cursor="View" aria-label="View Spirulina Avocado Dip recipe"><div class="ph"><img src="images/recipe-dip.webp" alt="Spirulina Avocado Dip"/></div><div class="body"><span class="n">5 min &middot; Easy</span><h3>Spirulina Avocado Dip</h3><p>A savory way to enjoy spirulina, perfect for sharing.</p><span class="uc-view">View recipe <span class="arr">&#8594;</span></span></div></button></div>
-      <div class="hpanel"><div class="uc uc-cta" style="justify-content:center;align-items:flex-start;background:var(--yellow);border-color:var(--yellow)"><div class="body"><span class="n" style="color:var(--green)">Recipe library</span><h3 style="color:var(--green)">More where that came from.</h3><p style="color:rgba(21,64,72,.8)">Smoothies, bowls, drinks &amp; savory dips, explore the full collection.</p><a class="btn btn-green" style="margin-top:18px" href="https://n6hxi54aj4soy.kimi.page/#/recipes" target="_blank" rel="noopener">Browse all recipes <span class="arr">&#8594;</span></a></div></div></div>
+    </div>
+    <div class="stores-cta reveal" style="margin-top:30px">
+      <a class="btn btn-green" href="https://shop.simpliigood.com" target="_blank" rel="noopener">Order online instead <span class="arr">&#8594;</span></a>
+      <a class="btn btn-outline-green" href="food-service.html">Become a stockist</a>
     </div>
   </div>
 </section>
@@ -1353,30 +1435,6 @@ p{text-wrap:pretty}
     </div>
   </div>
 </div>
-
-<!-- ============ STORE LOCATOR ============ -->
-<section class="sec stores" id="stores">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Where to buy</span>
-      <h2>Find us in the freezer aisle.</h2>
-      <p>SimpliiGood is stocked at <b id="locTotal">264</b> locations across the US. Tap a region on the map, or search by city, store or zip.</p>
-    </div>
-    <div class="locator reveal">
-      <div id="storeMap" aria-label="SimpliiGood store map"></div>
-      <div class="loc-panel">
-        <div class="loc-search"><input id="locSearch" type="search" placeholder="Search by city, store or zip code" aria-label="Search stores"/></div>
-        <div class="loc-chips" id="locChips"></div>
-        <div class="loc-count" id="locCount"></div>
-        <div class="loc-list" id="locList"></div>
-      </div>
-    </div>
-    <div class="stores-cta reveal" style="margin-top:30px">
-      <a class="btn btn-green" href="https://shop.simpliigood.com" target="_blank" rel="noopener">Order online instead <span class="arr">&#8594;</span></a>
-      <a class="btn btn-outline-green" href="food-service.html">Become a stockist</a>
-    </div>
-  </div>
-</section>
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer" id="about">
